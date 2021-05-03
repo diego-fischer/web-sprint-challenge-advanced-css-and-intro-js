@@ -239,8 +239,23 @@ button:hover {
 
   img {
     margin-bottom: 5%;
-    max-width: 80%;
+    /* max-width: 80%; */
+    height: 60vw;
+    max-width: 75%;
   }
+
+  /* 
+  img {
+    margin-bottom: 5%;
+    position: relative;
+    width: 50%;
+  } */
+
+  /* img:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  } */
 
   .bio {
     font-size: 1.2rem;
@@ -255,5 +270,9 @@ button:hover {
   }
   div.artist {
     width: 100%;
+  }
+
+  #josephbio {
+    margin-bottom: 10rem;
   }
 }
