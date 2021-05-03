@@ -252,7 +252,7 @@ function getArtistByIndex(arr, id) {
   return `the artist at index ${id} is ${arr[id].name}`;
 }
 
-console.log(getArtistByIndex(artists, 2));
+console.log(getArtistByIndex(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -282,11 +282,32 @@ function get20s(arr) {
   });
 
   const filteredArr = arr.filter((el) => el.twentyfirstcentury == true);
+  const namesOnly = filteredArr.map((el) => el["name"]);
 
-  return filteredArr;
+  return namesOnly;
 }
 
 console.log(get20s(artists));
+
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+ Use removeArtist to do the following:
+ 1. Receive an array
+ 2. Receive a number which is the desired index in the array
+ 3. The function should remove an artist from the array at the index
+ 4. Return the length of the remaining dataset.
+ 
+ For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
+
+function removeArtist(arr, index) {
+  const removedItem = arr.splice(index, 1);
+  // console.log(removedItem);
+  const filteredArr = arr.filter((el) => el.name != removedItem.name);
+  return filteredArr.length;
+}
+
+// console.log(artists);
+removeArtist(artists, 2);
+// console.log(removeArtist(artists, 2));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -316,11 +337,11 @@ const newData = {
 
 function addArtist(arr, newObj) {
   arr.push(newObj);
-
   return arr;
 }
-
-console.log(addArtist(artists, newData));
+// console.log(artists);
+// console.log(addArtist(artists, newData));
+addArtist(artists, newData);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -331,11 +352,13 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(arr) {
   const filteredArr = arr.filter((el) => el.paintings >= 100);
+  const namesOnly = filteredArr.map((el) => el["name"]);
 
-  return filteredArr;
+  return namesOnly;
 }
 
-console.log(lotsOfArt(artists));
+// console.log(lotsOfArt(artists));
+lotsOfArt(artists);
 
 // 🎨🎨 STRETCH 🎨🎨//
 /* 💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪 
